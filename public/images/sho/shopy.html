@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shopper</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        header{
+            display: flex;
+            align-items:center;
+            justify-content:space-between;
+            padding: 30px;
+            background-color: red;
+        }
+        .title{
+            font-size: 40px;
+            font-weight: bold;
+        }
+        .categories{
+            margin-right: 10px;
+            font-size: 25px;
+        }
+        .bi{
+            margin-left: 20px;
+        }
+        .line{
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding:10px;
+            letter-spacing:5px
+        }
+        main{
+            display: grid;
+            grid-template-columns: 4fr 4fr 4fr;
+            height: 500px;
+            margin-top: 10px;
+        }
+        .women{
+            background: url(../public/images/women.jpg);
+            background-size: cover;
+            opacity: 0.8;
+        }
+        .men{
+            background: url(../public/images/men.jpg);
+            background-size: cover;
+            opacity: 0.8;
+        }
+        .kid{
+            background: url(../public/images/kids.jpg);
+            background-size: cover;
+            opacity: 0.8;
+        }
+        .women:hover,.men:hover,.kid:hover{
+            opacity: 1.0;
+        }
+        .women,.men,.kid{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .banner-title{
+            font-size: 50px;
+            color: white;
+            text-shadow: 2px 2px 2px black;
+            font-weight: bold;
+        }
+        .banner-button{
+            padding: 10px;
+            width: 180px;
+            border: none;
+            background-color: white;
+            font-size: 15px;
+        }
+        .card-body{
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .banner-button span{
+            margin-left: 0px;
+        }
+        .banner-button:hover span{
+            margin-left: 8px;
+        }
+        .banner-button:hover{
+            cursor: grab;
+        }
+        .cap{
+            height:150px;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-left: 200px;
+            margin-right: 200px;
+        }
+        .raj{
+            display: flex;
+            justify-content: space-between;
+            color:grey;
+        }
+        .bii{
+            font-size: 25px;
+            color: red;
+            margin-right: 20px;
+        }
+        .bold{
+            font-weight: bold;
+            color: black;
+            margin-bottom: 10px;
+        }
+        .lines{
+            display: list-item;
+            align-items: center;
+            justify-content: center;
+            color: gray;
+            text-align: center;
+            font-size: 20px;
+        }
+        .bigl{
+            color: black;
+            font-size: 40px;
+            font-weight: bold;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        .bag{
+            display: grid;
+            grid-template-columns: 4fr 8fr;
+            height: 400px;
+            margin-top: 20px;
+            margin-left: 200px;
+            margin-right: 200px;
+        }
+        .image{
+            background-image: url(../public/images/women1.jpg);
+            background-size: cover;
+            height: 100%;
+            width: 100%;
+            font-size: 40px;
+            color: white;
+            text-align: center;
+            align-items: center;
+            font-weight: bold;
+            margin-left: 0px;
+        }
+        .img-button{
+            color: white;
+            font-size: 25px;
+            background: none;
+            border: none;
+            font-weight: bold;
+        }
+        .man{
+            background-image: url(../public/images/men1.jpg);
+            background-size: cover;
+            height: 100%;
+            width: 100%;
+            margin-left: 20px;
+            text-align: left;
+            margin-left: 20px;
+        }
+        .manl{
+            margin-top: 100px;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .man-button{
+            color: black;
+            font-size: 25px;
+            background: none;
+            border: none;
+            font-weight: bold;
+            margin-top: 80px;
+        }
+        .image:hover{
+            margin-left: 5px;
+            cursor: grab;
+        }
+        .man:hover{
+            margin-left: 25px;
+            cursor: grab;
+        }
+        .img-button span{
+            margin-left: 0px;
+        }
+        .man-button span{
+            margin-left: 0px;
+        } .img-button:hover span{
+            margin-left: 5px;
+        }
+        .man-button:hover span{
+            margin-left: 5px;
+        }
+
+        .img-button:hover{
+            cursor: grab;
+        }
+        .man-button:hover{
+            cursor: grab;
+        }
+        .offer{
+            margin-left: 1100px;
+            border-radius:100px;
+            border: 1px red;
+            background-color: red;
+            font-size: 20px;
+            text-align: center;
+            display: block;
+            align-items: center;
+        }
+        .off{
+            font-size: 50px;
+            font-weight: bold;
+        }
+        .dres{
+            display: grid;
+            grid-template-columns:3fr 5fr 4fr;
+            height: 400px;
+            margin-top: 20px;
+            margin-left: 200px;
+            margin-right: 200px;
+        }
+        .d-image{
+            background-image: url(../public/images/sweatdress.JPG);
+            background-size: cover;
+            height: 100%;
+            width: 100%;
+            font-size: 40px;
+            color: white;
+            text-align: center;
+            align-items: center;
+            font-weight: bold;
+            margin-left: 0px;
+        }
+        .d-image:hover{
+            margin-left: 5px;
+            cursor: grab;
+        }
+        .liness{
+            display: list-item;
+            align-items: center;
+            justify-content: center;
+            color: black;
+            text-align: center;
+            font-size: 20px;
+            margin-top: 200px;
+        }
+        .red{
+            margin-left: 30px;
+            font-weight: bold;
+        }
+        .red:hover{
+            color: red;
+            cursor: grab;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div><span class="title">Shopper.</span></div>
+        <div>
+            <span class="categories">Home</span>
+            <span class="categories">Catlog</span>
+            <span class="categories">Shop</span>
+            <span class="categories">Pages</span>
+            <span class="categories">Blog</span>
+            <span class="categories">Docs</span>
+        </div>
+        <div>
+            <span class="bi bi-search"></span>
+            <span class="bi bi-person"></span>
+            <span class="bi bi-heart"></span>
+            <span class="bi bi-cart"></span>
+        </div>
+    </header>
+    <div class="line">HAPPY HOLIDAY DETAILS ON EVERYTHING</div>
+    <main>
+        <div class="women">
+            <div class="card">
+             <div class="card-body">
+                <div class="banner-title">women</div>
+             </div>
+             <div class="card-footer">
+                <button class="banner-button">Shop Women<span class="bi bi-arrow-right"></span></button>
+             </div>   
+            </div>
+        </div>
+        <div class="men">
+            <div class="card">
+                <div class="card-body">
+                   <div class="banner-title">men</div>
+                </div>
+                <div class="card-footer">
+                   <button class="banner-button">Shop men<span class="bi bi-arrow-right"></span></button>
+                </div>   
+               </div>
+        </div>
+        <div class="kid">
+            <div class="card">
+                <div class="card-body">
+                   <div class="banner-title">Kids</div>
+                </div>
+                <div class="card-footer">
+                   <button class="banner-button">Shop Kids<span class="bi bi-arrow-right"></span></button>
+                </div>   
+               </div>
+        </div>
+    </main>    
+        <div class="cap">
+            <div class="raj">
+                <span class="bii bi-truck"></span>
+                <span class="non">
+                    <div class="bold">FREE SHIPPING</div>
+                    <DIV>From all orders over $100</DIV>
+                </span>
+            </div>
+            <div class="raj">
+                <span class="bii bi-arrow-repeat"></span>
+                <span class="non">
+                    <div class="bold">FREE RETURNS</div>
+                    <DIV>Return monry with in 30 days</DIV>
+                </span>
+            </div>
+            <div class="raj">
+                <span class="bii bi-lock"></span>
+                <span class="non">
+                    <div class="bold">SECURE SHOPPING</div>
+                    <DIV>You're in safe hands</DIV>
+                </span>
+            </div>
+            <div class="raj">
+                <span class="bii bi-tag"></span>
+                <span class="non">
+                    <div class="bold">OVER 10,000 STYLES</div>
+                    <DIV>We have everything you need</DIV>
+                </span>
+            </div>
+        </div>
+        <div class="lines">
+           <div>NEW COLLECTION</div>
+           <div class="bigl">Best Picks 2019</div>
+           <div>Appear, dry there darkness they're seas, dry waters thing fly midst. Beast,</div>
+           <div>above fly brought Very green.</div> 
+        </div>
+        <div class="bag">
+            <div class="image">
+                <div class="card-body">
+                    <div>Bags collections</div>
+                </div>
+                <div><button class="img-button"> Shop now<span class="bi bi-arrow-right"></span></button></div>
+            </div>
+            <div class="man">
+                <div class="offer">
+                    <div>save</div>
+                    <div class="off">30%</div>
+                </div>
+                    <div class="manl">Printed Men's Shirts</div>
+                <div><button class="man-button"> Shop now<span class="bi bi-arrow-right"></span></button></div>
+            </div>
+        </div>
+        <div class="dres">
+            <div class="dre"> <div class="manl">Basic women's dress</div>
+            <div><button class="man-button"> Shop now<span class="bi bi-arrow-right"></span></button></div></div>
+            <div> <img src="../public/images/dress1.JPG"></div>
+            <div class="d-image">
+                <div class="card-body">
+                    <div>Sweatshirts</div>
+                </div>
+                <div><button class="img-button"> Shop now<span class="bi bi-arrow-right"></span></button></div>
+            </div> 
+        </div>
+        <div class="liness">
+            <div class="bigl">top month sellers</div>
+            <div>
+                <span class="red">Women</span>
+                <span class="red">Men</span>
+                <span class="red">Kids</span>
+            </div>
+        </div>
+      </body>
+</html>
